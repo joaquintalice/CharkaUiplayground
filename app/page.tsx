@@ -1,20 +1,39 @@
-import { Container, Box, Center, Flex, Square } from '@chakra-ui/react'
+import Navbar from '@/components/Navbar'
+import { Container, Box, Center, Flex, Square, Heading, Text } from '@chakra-ui/react'
 import React from 'react'
+
+const styleObj = {
+  p: '2rem',
+  color: 'white',
+  bgColor: 'purple.300',
+  filter: 'blur(2px)',
+  ':hover': {
+    bgColor: 'black',
+    filter: 'blur(1px)',
+    color: 'white',
+    my: '3rem'
+  }
+}
 
 export default function Home() {
   return (
-    <Container maxW='container.sm'>
-      <Flex color='white'>
-        <Center w='100px' bg='green.500'>
-          <h2>Box 1</h2>
-        </Center>
-        <Square bg='blue.500' size='150px'>
-          <h2>Box 2</h2>
-        </Square>
-        <Box flex='1' bg='tomato'>
-          <h2>Box 3</h2>
+    <>
+      <Navbar />
+      <Container>
+        <Heading my='3rem'>
+          heading component
+        </Heading>
+        <Text color='red'>Text component je</Text>
+
+        <Box bgColor='yellow' p='2rem'>
+          <Text bgColor='gray' color='white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cupiditate voluptatem, ullam praesentium magni soluta recusandae iste omnis velit facere sapiente porro hic error libero eveniet provident sit magnam accusamus.</Text>
         </Box>
-      </Flex>
-    </Container >
+
+        <Box sx={styleObj}>
+          <Text >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cupiditate voluptatem, ullam praesentium magni soluta recusandae iste omnis velit facere sapiente porro hic error libero eveniet provident sit magnam accusamus.</Text>
+        </Box>
+
+      </Container>
+    </>
   )
 }
