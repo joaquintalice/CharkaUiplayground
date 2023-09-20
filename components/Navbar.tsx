@@ -29,13 +29,11 @@ import { ReactText } from 'react'
 interface LinkItemProps {
     name: string
     icon: IconType
+    href: string
 }
 const LinkItems: Array<LinkItemProps> = [
-    { name: 'Home', icon: FiHome },
-    { name: 'Trending', icon: FiTrendingUp },
-    { name: 'Explore', icon: FiCompass },
-    { name: 'Favourites', icon: FiStar },
-    { name: 'Settings', icon: FiSettings },
+    { name: 'Home', icon: FiHome, href: '/' },
+    { name: 'Employees', icon: FiTrendingUp, href: '/employees' },
 ]
 
 export default function Navbar({
@@ -88,7 +86,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
                 <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
             </Flex>
             {LinkItems.map((link) => (
-                <NavItem key={link.name} icon={link.icon}>
+                <NavItem key={link.name} icon={link.icon} href={link.href}>
                     {link.name}
                 </NavItem>
             ))}
@@ -99,12 +97,13 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 interface NavItemProps extends FlexProps {
     icon: IconType
     children: ReactText
+    href: string
 }
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, children, href, ...rest }: NavItemProps) => {
     return (
         <Box
             as="a"
-            href="#"
+            href={href}
             style={{ textDecoration: 'none' }}
             _focus={{ boxShadow: 'none' }}>
             <Flex
