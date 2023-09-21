@@ -1,20 +1,13 @@
-import { Card, CardBody, Heading, Stack, Image, Text, Divider, CardFooter, ButtonGroup, Button, Center } from '@chakra-ui/react'
+import { Card, CardBody, Heading, Stack, Image, Text, CardFooter, Button, Center } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import EmployeeRepository from '@/repository/employees/EmployeeRepository'
+import EmployeeRepository from '@/employees/data/repository/EmployeeRepository'
 import NotFound from '@/app/not-found';
 import Loading from '@/app/loading';
 import Link from 'next/link';
+import UserData from '@/employees/data/interfaces/UserData.interface';
 
 type Params = {
     id: number;
-}
-
-type UserData = {
-    id: number;
-    email: string;
-    first_name: string;
-    last_name: string;
-    avatar: string;
 }
 
 export default function EmployeeCard({ id }: Params) {
@@ -57,7 +50,9 @@ export default function EmployeeCard({ id }: Params) {
 
                                 <Stack>
                                     <CardBody>
-                                        <Heading size='md'>{data.first_name} {data.last_name}</Heading>
+                                        <Heading size='md'>
+                                            {data.first_name} {data.last_name}
+                                        </Heading>
 
                                         <Text py='2'>
                                             {data.email}

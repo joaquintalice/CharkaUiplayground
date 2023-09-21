@@ -1,6 +1,6 @@
 'use client'
 
-import React, { ReactNode } from 'react'
+import React from 'react'
 import {
     IconButton,
     Box,
@@ -18,9 +18,6 @@ import {
 import {
     FiHome,
     FiTrendingUp,
-    FiCompass,
-    FiStar,
-    FiSettings,
     FiMenu,
 } from 'react-icons/fi'
 import { IconType } from 'react-icons'

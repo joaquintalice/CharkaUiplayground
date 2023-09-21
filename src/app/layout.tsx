@@ -2,8 +2,7 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers'
-import Navbar from '@/components/navbar/Navbar'
-import { Grid, GridItem, Text } from '@chakra-ui/react'
+import Navbar from '@/shared/components/navbar/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -1,4 +1,3 @@
-
 const URL = 'https://reqres.in/api/users'
 
 const EmployeeRepository = {

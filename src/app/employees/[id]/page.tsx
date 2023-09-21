@@ -1,7 +1,7 @@
 'use client'
 import { useParams } from 'next/navigation'
 
-import EmployeeCard from '@/components/employees/EmployeeCard'
+import EmployeeCard from '@/employees/features/EmployeeCard'
 
 
 export default function EmployeePage() {

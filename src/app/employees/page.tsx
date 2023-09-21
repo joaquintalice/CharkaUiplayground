@@ -1,7 +1,8 @@
-import EmployeeTable from '@/components/employees/EmployeeTable';
+import EmployeeList from '@/employees/features/EmployeeList'
 import { Center, Heading, Text } from '@chakra-ui/react';
 import React, { Suspense } from 'react'
 import Loading from '../loading';
+
 
 
 export default async function EmployeesPage() {
@@ -13,7 +14,7 @@ export default async function EmployeesPage() {
                 </Heading>
             </Center>
             <Suspense fallback={<Loading />}>
-                <EmployeeTable />
+                <EmployeeList />
             </Suspense>
 
         </>
